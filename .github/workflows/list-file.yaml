@@ -3,7 +3,7 @@ name: List Files in Repo
 on:
   workflow_dispatch:      # Allows you to click a button to run this manually
   push:
-    branches: [ main ]    # or trigger on push
+    branches: [ master ]    # or trigger on push
 
 jobs:
   debug_files:
