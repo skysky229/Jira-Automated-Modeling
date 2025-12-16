@@ -5,14 +5,14 @@ on:
 #  push:
 #    branches: [ master ]    # or trigger on push
   repository_dispatch:
-    types: [jira-automated-modeling-ticket-status-change]
+    types: [jam-ticket-status-change]
 
 jobs:
-  debug_files:
+  list-informaiton:
     runs-on: ubuntu-latest
     steps:
       - name: Print payload
-        run: echo "${{ github.event.client_payload }}"
+        run: echo "${{ github.event.client_payload.issue_id }}" ">- ${{ github.event.client_payload.current_status }}" ">- ${{ github.event.client_payload.issue_key }}"
 #      # 1. Checkout the code (Crucial!)
 #      - name: Checkout Code
 #        uses: actions/checkout@v4
