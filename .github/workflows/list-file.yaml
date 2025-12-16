@@ -1,9 +1,11 @@
 name: List Files in Repo
 
 on:
-  workflow_dispatch:      # Allows you to click a button to run this manually
-  push:
-    branches: [ master ]    # or trigger on push
+#  workflow_dispatch:      # Allows you to click a button to run this manually
+#  push:
+#    branches: [ master ]    # or trigger on push
+  repository_dispatch:
+    types: [list-files]
 
 jobs:
   debug_files:
